@@ -1,0 +1,25 @@
+{
+  "name": "envocado-project",
+  "version": "1.0.0",
+  "description": "Interactive Express demo application showcasing zero-dependency environment validation with Envocado",
+  "type": "module",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js",
+    "test": "node --test test/"
+  },
+  "keywords": [
+    "envocado",
+    "express",
+    "environment-validation",
+    "configuration",
+    "demo"
+  ],
+  "author": "Parineeta",
+  "license": "MIT",
+  "dependencies": {
+    "envocado": "file:../envocado",
+    "express": "^4.21.2"
+  }
+}
