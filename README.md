@@ -1,4 +1,4 @@
-# Envocado Project 🥑
+# Envocado Project
 
 > **Interactive Express & Node.js environment validation demo powered by Envocado.**
 
@@ -94,7 +94,7 @@ Open your browser and navigate to **`http://localhost:3000`** to view the intera
 
 ---
 
-## 🥑 Demonstrating Startup Gating
+## Demonstrating Startup Gating
 
 Envocado intercepts configuration problems **before** the Express server starts listening for traffic.
 
@@ -130,7 +130,7 @@ DATABASE_URL=postgres://localhost:5432/db API_SECRET_KEY=my_secure_secret_key_12
 ```
 **Result**:
 ```text
-🥑 Envocado: Environment configuration successfully verified and locked!
+Envocado: Environment configuration successfully verified and locked!
 🚀 Envocado Demo Store running at http://localhost:3000
    Environment: development
    Immutable Config: LOCKED
