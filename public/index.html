@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Envocado Demo — Zero-Dependency Environment Validation</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-container">
+    <!-- Header -->
+    <header class="navbar">
+      <div class="brand">
+        <span class="logo">🥑</span>
+        <div>
+          <h1>Envocado Project</h1>
+          <p class="subtitle">Zero-dependency environment validation for Node.js</p>
+        </div>
+      </div>
+      <div class="header-badges">
+        <span class="badge badge-success" id="server-status">● Server Online</span>
+        <span class="badge badge-purple" id="freeze-status">🔒 Config Frozen</span>
+      </div>
+    </header>
+
+    <!-- Main Grid -->
+    <main class="dashboard-grid">
+      <!-- Section 1: Active Configuration -->
+      <section class="card config-card">
+        <div class="card-header">
+          <h2>Active Application Configuration</h2>
+          <span class="pill" id="app-env-pill">development</span>
+        </div>
+        <p class="card-description">
+          The following configuration was validated at server startup using Envocado. Sensitive secrets are safely masked, and the configuration object is permanently frozen.
+        </p>
+        <div class="table-container">
+          <table class="config-table">
+            <thead>
+              <tr>
+                <th>Variable</th>
+                <th>Type</th>
+                <th>Required</th>
+                <th>Current Value</th>
+              </tr>
+            </thead>
+            <tbody id="config-table-body">
+              <tr>
+                <td colspan="4" class="loading-cell">Loading active configuration...</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Section 2: Interactive Validator Sandbox -->
+      <section class="card sandbox-card">
+        <div class="card-header">
+          <h2>Interactive Envocado Sandbox</h2>
+          <span class="pill pill-accent">Live API Test</span>
+        </div>
+        <p class="card-description">
+          Test Envocado's fail-fast validation in real-time. Choose a preset scenario below or supply custom variables to see Envocado's error aggregation and diagnostics.
+        </p>
+
+        <!-- Presets -->
+        <div class="presets-row">
+          <span class="preset-label">Test Scenarios:</span>
+          <button class="btn btn-outline" data-preset="valid">Valid Config</button>
+          <button class="btn btn-outline" data-preset="missing-db">Missing Database URL</button>
+          <button class="btn btn-outline" data-preset="bad-port">Invalid Port (99999)</button>
+          <button class="btn btn-outline" data-preset="short-secret">Short Secret (&lt;16 chars)</button>
+          <button class="btn btn-outline" data-preset="bad-bool">Invalid Boolean ("yes")</button>
+        </div>
+
+        <!-- Editor & Output -->
+        <div class="sandbox-split">
+          <div class="sandbox-input-panel">
+            <label for="env-input">Environment Variables (JSON format):</label>
+            <textarea id="env-input" rows="12" spellcheck="false"></textarea>
+            <button id="validate-btn" class="btn btn-primary">Run Envocado Validation</button>
+          </div>
+          <div class="sandbox-output-panel">
+            <label>Validation Result:</label>
+            <div id="output-box" class="output-box">
+              <span class="placeholder-text">Click "Run Envocado Validation" or select a scenario above.</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 3: Feature Highlights -->
+      <section class="card features-card">
+        <div class="card-header">
+          <h2>Why Use Envocado?</h2>
+        </div>
+        <div class="features-grid" id="features-grid">
+          <!-- Dynamic features will render here -->
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p>
+        Powered by <strong>Envocado</strong> &bull; Zero runtime dependencies &bull;
+        <a href="https://github.com/jsondumpsbinary/envocado-project" target="_blank">GitHub Repository</a>
+      </p>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
